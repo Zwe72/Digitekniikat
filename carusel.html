@@ -52,28 +52,63 @@
     </div> 
 </nav>
 
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
+    <!-- Karuselli -->
+    <div id="carouselExample" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Ensimmäinen konsoli -->
+          <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="Atari 2600">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Atari 2600</h5>
+                <p>Julkaisuvuosi: 1977 - Ensimmäinen kotikonsoli, joka käynnisti peliteollisuuden.</p>
               </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-              </div>
-            </div>
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Edellinen</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Seuraava</span>
-            </button>
           </div>
+
+          <!-- Toinen konsoli -->
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="Nintendo Entertainment System">
+            <div class="carousel-caption d-none d-md-block"></div>
+            <h5>Nintendo Entertainment System eli NES</h5>
+            <p>Julkaisuvuosi: 1983 - Tärkeä rooli peliteollisuuden nousussa.</p>
+            </div>
+          </div>
+          
+          <!-- Kolmas konsoli-->
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="PlayStation">
+            <div class="carousel-caption d-none d-md-block"></div>
+            <h5>PlayStation</h5>
+            <p>Julkaisuvuosi: 1994 - Sony otti paikkansa pelimarkkinoilla ja mullisti konsolipelit.</p>
+            </div>
+          </div>
+
+          <!-- Neljäs konsoli-->
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="Xbox">
+            <div class="carousel-caption d-none d-md-block"></div>
+            <h5>Xbox</h5>
+            <p>Julkaisuvuosi: 2001 - Microsoftin liittyminen pelikonsolimarkkinoille.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Edellinen/Näytä seuraava-->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Edellinen</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Seuraava</span>
+        </button>
+
+        <!-- Karuselli-indikaattorit -->
+         <div class="carouse1-indicators">
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> 
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button> 
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button> 
+        </div>
+      </div>
 
 
     </main>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vuosikymmenen Myydyimmät Pelit</title>
     <link rel = "stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -50,40 +50,61 @@
           </div>
         </div> 
     </nav>
+
+      <!-- Otsikko ja teksti -->
+       <div class="container text-center mt-5">
+        <h2>Vuosikymmennen myydyimmät pelit</h2>
+        <p class="lead"> Tässä ovat jokaisen vuosikymmennen myydyimmät pelit, jotka valloittivat pelimaailman.
+          Nämä pelit jättivät jälkensä historiaan ja määrittelivät aikansa.
+        </p>
+       </div>
             <!-- Taulukko --> 
-             <div class="container mt-5">
-              <h2 class="mb-4 text-center">Pelaajien suosikkipelit</h2>
-           <table class="table table-striped table-bordered table-hover">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>John</td>
-                <td>Doe</td>
-                <td>@social</td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="container mt-5">
+            <h2 class="mb-4 text-center">Pelaajien suosikkipelit</h2>
+            <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover text-center">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Vuosikymmenen</th>
+              <th scope="col">Peli</th>
+              <th scope="col">Julkaisuvuosi</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Alusta (Konsoli)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1980-luku</td>
+              <td>Super Mario Bros.</td>
+              <td>1985</td>
+              <td>Tasohyppely</td>
+              <td>Nintendo Entertainment System (NES)</td>
+            </tr>
+            <tr>
+              <td>1990-luku</td>
+              <td>Pokémon Red/Blue</td>
+              <td>1996</td>
+              <td>RPG</td>
+              <td>Game Boy</td>
+            </tr>
+            <tr>
+              <td>2000-luku</td>
+              <td>Wii Sports</td>
+              <td>2006</td>
+              <td>Urheilu</td>
+              <td>Nintendo Wii</td>
+            </tr>
+            <tr>
+              <td>2010-luku</td>
+              <td>Grand Theft Auto V</td>
+              <td>2013</td>
+              <td>Toiminta</td>
+              <td>PlayStation 3, Xbox 360</td>
+            </tr>
+          </tbody>
+        </table>
         </div>
-    </main>   
+      </div>
+  </main>   
 </body>
 </html>

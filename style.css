@@ -14,4 +14,23 @@
      .navbar-custom .nav-item:hover .nav-link {
      color: #ffffff;
      }
+     /*taulukolle kivempi kulma*/
+     table {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    table tbody tr:hover {
+      background-color: #f8f9fa;
+      transform: scale(1.01); 
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+    }
+    /* kortille varjo ja animaatio*/
+    .card {
+      transition: transform 0.2s ease-in-out;
+  }
+  .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
     
