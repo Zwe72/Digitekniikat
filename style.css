@@ -1,19 +1,99 @@
-/* taustan väri */
-.navbar-custom {
-      background-color:blueviolet;
-    	}
-    /* ekstin väri */
-    .navbar-custom .navbar-text{
-      color:#FFFFFF;
-     }
-    /* linkin väri */
-     .navbar-custom .navbar-nav .nav-link {
-      color:#FFFFFF;;
-     } /* aktiivisen & hover-linkin väri */ 
-     .navbar-custom .nav-item.active .nav-link,
-     .navbar-custom .nav-item:hover .nav-link {
-     color: #ffffff;
-     }
+  /* Lataa retro-pelin fontti */
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+ 
+  /* Yleiset tyylit */
+body {
+  background-color: #1c1c1c !important; /* Tummanharmaa tausta */
+  color: #f0f0f0 !important; /* Vaaleanharmaa teksti */
+  font-family: 'Press Start 2P', cursive !important; /* Retro-pelikirjasin */
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Linkit */
+a {
+  color: #f8c705 !important; /* Kultaiset linkit */
+  text-decoration: none !important; /* Poistaa alleviivauksen */
+}
+a:hover {
+  color: #ff9900 !important; /* Hiirellä hover-efekti */
+}
+
+/* Navigaation tyyli */
+.navbar {
+  background-color: #333 !important; /* Tumma tausta */
+}
+
+.navbar .navbar-text {
+  color: #ffcc00 !important; /* Kultainen logo */
+}
+
+.navbar .nav-link {
+  color: #3d3a3a !important; /* Harmaat linkit */
+}
+
+.navbar .nav-link:hover {
+  color: #ff9900 !important; /* Hover-efekti */
+}
+
+/* Accordionin tyyli */
+.accordion-button {
+  background-color: #333 !important; /* Tumma tausta */
+  color: #f0f0f0 !important; /* Vaalea teksti */
+  font-size: 16px !important; /* Isompi fontti */
+  text-transform: uppercase !important;
+  border: none !important;
+}
+
+/* Kuvien tyyli */
+img {
+  max-width: 100%; /* Varmistaa, että kuvat eivät mene ulos */
+  height: auto;
+  border: 5px solid #ffcc00; /* Kultainen reunus */
+}
+
+/* Nappien tyyli */
+button {
+  color: #1c1c1c !important; /* Tumma teksti */
+  border: none !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+
+button:hover {
+  background-color: #ff9900 !important; /* Hover-efekti */
+}
+
+/* Taulukon tyyli */
+
+table, th, td {
+  border: 2px solid #ffcc00 !important; /* Kultaiset reunat */
+}
+
+th, td {
+  text-align: left !important;
+}
+
+th {
+  background-color: #141b35 !important; /* Tumma tausta */
+  color: #ffcc00 !important; /* Kultaiset otsikot */
+}
+
+.accordion-button:hover {
+  background-color: #6b6a6a !important; /* Hover-efekti */
+}
+
+.accordion-body {
+  background-color: #101070fc !important; /* Tummempi tausta */
+  color: #f0f0f0 !important; /* Vaalea teksti */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #121212 !important; /* Auki oleva tausta */
+}
+
      /*taulukolle kivempi kulma*/
      table {
       border-radius: 12px;
@@ -33,4 +113,43 @@
       transform: scale(1.05);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-    
+
+  /* Varmistaa, että hampurilaisvalikon nappi ei mene päällekkäin karusellin kanssa */
+.navbar-toggler {
+  z-index: 1050; /* Asettaa valikon napit eteenpäin */
+}
+
+
+
+
+/* Ruudukon tekstin väri ja taustan kontrasti */
+.bg-light {
+  background-color: #f8f9fa !important; /* Vaalean harmaa tausta */
+}
+
+.bg-light h5 {
+  color: #333 !important; /* Tummempi teksti otsikoille */
+}
+
+.bg-light p {
+  color: #444 !important; /* Tummempi teksti kappaleille */
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px !important;
+  }
+
+  .accordion-button {
+    font-size: 14px !important;
+  }
+
+  img {
+    width: 100% !important;
+  }
+
+  button:not(.carousel-control-prev):not(.carousel-control-next) {
+    width: 100% !important; /* Täysleveät napit pienissä näytöissä */
+  }
+}
