@@ -135,6 +135,14 @@ th {
   color: #444 !important; /* Tummempi teksti kappaleille */
 }
 
+img {
+  max-width: 100%; /* Kuvan koko ei ylitä säiliötä */
+  height: auto;    /* Säilyttää oikean kuvasuhteen */
+  max-height: 600px; /* TAI max-width: 800px; jos haluat leveyden mukaan */
+  object-fit: contain; /* Pitää kuvan siistinä */
+}
+
+
 /* Responsiivisuus */
 @media (max-width: 768px) {
   .navbar {
