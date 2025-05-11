@@ -49,15 +49,19 @@
         <button onclick="poke()">Hae</button><br>
     </p>
     <!-- Alueet, joihin haetut tiedot tulee näkyviin-->
-    <button onclick="kaanna()" class="btn btn-secondary">Käännä</button>
+    <button onclick="kaanna()" class="btn btn-secondary" id="kaannaBtn" style="display: none;" disabled>Käännä</button>
     <div id="ominaisuudet"></div>
     <div id="nimi">Kirjoita laatikkoon Pokemonin nimi</div>
     <div id="kuva2"></div>
 
     <script>
         let currentPokemon = null; // Muuttuja pokemonin tiedolle
+
         //Funktio joka hakee pokemoneja API:sta
         function poke() {
+            // Piilotetaan käännä nappi kunnes haku onnistuu     
+            document.getElementById("kaannaBtn").style.display = "none";
+           
             //Haetaan käyttäjän syöttämä nimi
             const pokeName = document.getElementById("pokemonName").value.toLowerCase();
 
@@ -74,12 +78,18 @@
                 .then(function (responseJson) {
                     currentPokemon = responseJson; // Tallennetaanpokemon objekti
                     pokekuva(responseJson, name);
+
+                    //aktivoi käännä nappi onnistunut haun jälkeen
+                    document.getElementById("kaannaBtn").style.display = "inline-block"; // Näytetään nappi
+                    document.getElementById("kaannaBtn").disabled = false; // Poistetaan disabled
                 })
                 //Jos tulee virhe, niin tulostetaan
                 .catch(function (error) {
                     document.getElementById("nimi").innerHTML = "<p> Tietoa ei pystyä hakemaan </p>";
                     document.getElementById("kuva2").innerHTML = "";
                     document.getElementById("ominaisuudet").innerHTML = "";
+                    document.getElementById("kaannaBtn").style.display = "none"; // deaktivoi nappi virheessä
+                    document.getElementById("kaannaBtn").disabled = true; // Estetään käännä-nappi virhetilanteessa
                 });
         }
 
