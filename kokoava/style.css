@@ -1,0 +1,148 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.header-section {
+    background: url('path_to_calligraphy_image.jpg') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.header-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.content-section {
+    padding: 2rem 0;
+}
+
+.footer {
+    background-color: #222;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.calligraphy-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.calligraphy-description {
+    font-size: 1.2rem;
+}
+
+/* Header-tyylit */
+header {
+    background-color: #222;
+    /* Tumma tausta */
+    padding: 1rem 0;
+}
+
+.navbar {
+    background-color: #333;
+    /* Tumma harmaa tausta */
+    border-bottom: 1px solid #444;
+}
+
+.navbar-brand {
+    color: #ffd700;
+    /* Keltainen brändin nimi */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+    /* Hover-väri */
+}
+
+.navbar-toggler {
+    border-color: #fff;
+    /* Valkoinen reunus hamburger-ikonille */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    /* Valkoinen hamburger-ikoni */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #f5f5f5;
+    /* Vaalea linkkiväri */
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffd700;
+    /* Keltainen hover ja aktiivinen linkki */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    border-bottom: 2px solid #ffd700;
+    /* Korostusviiva aktiiviselle linkille */
+}
+
+.content-block {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.hero-section {
+    background-color: #222;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-text .intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card .card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card .card-body {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
