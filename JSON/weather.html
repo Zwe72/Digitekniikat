@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <title>Sää</title>
     <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm navbar-custom">
         <div class="container-fluid">
 
             <!-- Hampparivalikko -->
@@ -46,6 +46,7 @@
     </nav>
 
     <div>
+        <!--Sään tiedot näytetään tähän-->
         <h1>Sää Helsingissä</h1>
         <div id="aika"></div>
         <div id="vastaus"></div>
@@ -88,7 +89,7 @@
                 console.error("Virhe: ", error);
             });
 
-
+        //Funktio joka käsittelee säätiedot ja näyttää ne sivulla
         function saa1(data) {
             var teksti1 = "";
             teksti1 = "<h3>Kaupunki:</h3>" + "<h5>" + data.name + "</h5>";

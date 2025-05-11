@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>JSON</title>
     <link rel="stylesheet" href="style.css">
 
@@ -16,7 +16,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm navbar-custom">
         <div class="container-fluid">
 
             <!-- Hampparivalikko -->
@@ -64,9 +64,9 @@
 
         //funktio joka hakee tiedon objektista ja kirjoittaa sen sivulle
         function kerro(obj) {
-            //Kerrotaan toteuksen nimi, osallistujamäärä ja 
-            let tiedot = "<h2>" + obj.toteuksenNimi + "</h2><br>"
-                + "<strong>Osallistujamäärä:</strong> " + obj.osallistujenLkm + " kpl<br>"
+            //Kerrotaan toteuksen nimi, osallistujamäärä
+            let tiedot = "<h2>" + obj.toteuksenNimi + "</h2>"
+                + "<p>Osallistujamäärä: " + obj.osallistujenLkm + " kpl </p>"
                 //luodaan lista osallistujista
                 + "<h3>Osallistujat:</h3><ul>";
 
