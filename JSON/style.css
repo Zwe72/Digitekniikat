@@ -136,10 +136,15 @@
    background-color: #FFB3BA;
  }
 
- /*JASON kuva luokka*/
- .img_luokka {
-   width: 100%;
- }
+ /* kuva luokka*/
+  img.responsive-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
 
  /* riviväli */
  div>* {
