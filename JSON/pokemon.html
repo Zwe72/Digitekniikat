@@ -49,10 +49,10 @@
         <button onclick="poke()">Hae</button><br>
     </p>
     <!-- Alueet, joihin haetut tiedot tulee näkyviin-->
+    <button onclick="kaanna()" class="btn btn-secondary">Käännä</button>
+    <div id="ominaisuudet"></div>
     <div id="nimi">Kirjoita laatikkoon Pokemonin nimi</div>
     <div id="kuva2"></div>
-    <div id="ominaisuudet"></div>
-    <button onclick="kaanna()" class="btn btn-secondary">Käännä</button>
 
     <script>
         let currentPokemon = null; // Muuttuja pokemonin tiedolle
@@ -94,9 +94,9 @@
 
             //näytetään lisäominaisuudet
             document.getElementById("ominaisuudet").innerHTML = `
-                    <p><b>Height:</b> ${(obj.height / 10).toFixed(1)} m</p>
-                    <p><b>Weight:</b> ${(obj.weight / 10).toFixed(1)} kg</p>
-                    <p><b>types:</b> ${obj.types[0].type.name}</p>
+                    <strong><b>Height:</b> ${(obj.height / 10).toFixed(1)} m</strong><br>
+                    <strong><b>Weight:</b> ${(obj.weight / 10).toFixed(1)} kg</strong><br>
+                    <strong><b>Types:</b> ${obj.types[0].type.name}</strong>
                 `;
         }
 
@@ -119,9 +119,9 @@
 
                 // Näytetään lisäominaisuudet
                 document.getElementById("ominaisuudet").innerHTML = `
-            <p><b>Height:</b> ${(currentPokemon.height / 10).toFixed(1)} m</p>
-            <p><b>Weight:</b> ${(currentPokemon.weight / 10).toFixed(1)} kg</p>
-            <p><b>Type:</b> ${currentPokemon.types[0].type.name}</p>
+            <strong><b>Height:</b> ${(currentPokemon.height / 10).toFixed(1)} m</strong><br>
+            <strong><b>Weight:</b> ${(currentPokemon.weight / 10).toFixed(1)} kg</strong><br>
+            <strong><b>Types:</b> ${currentPokemon.types[0].type.name}</strong><br>
         `;
             }
         }
