@@ -100,3 +100,8 @@
 .img_luokka {
   width: 100%;
 }
+
+/* riviväli */
+div > * {
+    margin-bottom: 7px;  /* Lisää pieni väli jokaisen elementin alle */
+}

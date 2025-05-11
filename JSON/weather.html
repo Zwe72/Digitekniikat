@@ -35,10 +35,7 @@
                         <a class="nav-link" href="toteutus.html">Tehtävä 1 OSA II</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pokemon.html">Pokemon haku (Tehtävä 2 OSA I)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cards.html">Tehtävä 2 OSA II</a>
+                        <a class="nav-link" href="pokemon.html">Pokemon haku (Tehtävä 2 OSA I ja II)</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="weather.html">Sää (Tehtävä 3)</a>
@@ -47,13 +44,38 @@
             </div>
         </div>
     </nav>
+
+    <div>
+        <h1>Sää Helsingissä</h1>
+        <div id="aika"></div>
+        <div id="vastaus"></div>
+        <div id="vastaus2"></div>
+        <div id="vastaus3"></div>
+        <div id="vastaus4"></div>
+        <img id="weather-icon" src="" alt="Sääkuva" style="width: 100px;">
+
+    </div>
+
     <script>
+
+        //Näytetään sivun latausaika
+        function naytaAika() {
+            const nyt = new Date();
+            const tunnit = nyt.getHours();
+            const aika = nyt.toLocaleTimeString("fi-FI");
+            document.getElementById("aika").innerHTML = "Sää kello " + aika;
+        }
+
+        //Kutsutaan ajan näyttöfuntio
+        naytaAika();
+
         //Haetaan sää API:sta
         fetch("https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric")
 
             //Muutetaan vastaus Json muotoon
             //kutsutaan funktiota ja välitetään saatu data sille
             .then(function (response) {
+
                 return response.json();
             })
             .then(function (data) {
@@ -69,23 +91,24 @@
 
         function saa1(data) {
             var teksti1 = "";
-            teksti1 = "<h3>Kaupunki:</h3>" + "<h4>" + data.name + "</h4>";
-            teksti2 = "<h3>Sää:</h3>" + "<h4>" + data.weather[0].description + "</h4>";
-            teksti3 = "<h3>Lämpötila:</h3>" + "<h4>" + data.main.temp + "&degC" + "</h4>";
-            teksti4 = "<h3>Tuuli:</h3>" + "<h4>" + data.wind.speed + " &nbspm/s</h4>";
+            teksti1 = "<h3>Kaupunki:</h3>" + "<h5>" + data.name + "</h5>";
+            teksti2 = "<h3>Sää:</h3>" + "<h5>" + data.weather[0].description + "</h5>";
+            teksti3 = "<h3>Lämpötila:</h3>" + "<h5>" + data.main.temp + "&degC" + "</h5>";
+            teksti4 = "<h3>Tuuli:</h3>" + "<h5>" + data.wind.speed + " &nbspm/s</h5>";
 
             //Ikonin URL
             var iconCode = data.weather[0].icon;
             var iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png `;
+
             //Päivitetään kuvan lähde
             document.getElementById("weather-icon").src = iconUrl;
+
             //Päivitetään säätiedot sivulle
-            document.getElementById("vastaus").innerHTML = teksti;
+            document.getElementById("vastaus").innerHTML = teksti1;
             document.getElementById("vastaus2").innerHTML = teksti2;
             document.getElementById("vastaus3").innerHTML = teksti3;
             document.getElementById("vastaus4").innerHTML = teksti4;
         }
-
 
     </script>
 </body>
