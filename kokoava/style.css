@@ -143,11 +143,21 @@ header {
 .card .card-body {
     padding: 20px;
 }
-
+/*footer tyyli*/
 .footer {
     background-color: #111;
     color: #fff;
     padding: 20px;
     text-align: center;
     margin-top: 40px;
+}
+/* album coverille määritykset */
+.album-cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem; /* Pyöristää kulmat hieman */
+    margin-bottom: 1rem; /* Lisää tilaa kuvan alle */
+    max-width: 500px; /* Rajoittaa maksimileveyden */
+ 
 }

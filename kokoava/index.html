@@ -33,22 +33,70 @@
             </div>
         </div>
     </nav>
+    <!-- Otsikko ja sivun esittely -->
     <div class="hero-section">
         <div class="hero-text">
             <h1>Jore & Zpoppa</h1>
             <p class="intro-text">
                 Tervetuloa Joren ja Zpopan fanisivustolle! <br>
-                Täällä voit tutustua tarkemmin heihin, heidän albumeihinsa sekä musiikinsa ja
-                kalligraafiaan. Löydät myös tietoa heidän tunnetuista kappaleistaan!
+                Täällä voit tutustua tarkemmin heihin, heidän albumeihinsa ja musiikinsa. Löydät myös tietoa heidän
+                tunnetuista kappaleistaan!
             </p>
         </div>
     </div>
 
+    <!-- Artistitiedot Deezeristä -->
+    <div class="container main-content mt-5">
+        <h2>Artistitiedot Deezeristä</h2>
+        <div id="artist-info" class="row">
+            <!-- Artistitiedot tulevat tähän -->
+        </div>
+    </div>
+
+    <script>
+        const artistId = "54505332"; // Jore & Zpoppa
+
+        function fetchArtistData() {
+            const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${artistId}`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Verkkovirhe: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const container = document.getElementById("artist-info");
+                    const card = `
+                        <div class="col-lg-6 mb-4">
+                            <div class="card">
+                                <img src="${data.picture_medium}" class="card-img-top" alt="${data.name}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${data.name}</h5>
+                                    <p class="card-text">Fanien määrä Deezerissä: ${data.nb_fan}</p>
+                                    <a href="${data.link}" target="_blank" class="btn btn-primary">Kuuntele Deezerissä</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += card;
+                })
+                .catch(error => {
+                    console.error("Virhe haettaessa tietoja:", error);
+                    document.getElementById("artist-info").textContent = "Tietojen hakeminen epäonnistui.";
+                });
+        }
+
+        fetchArtistData();
+    </script>
+    <!-- tietoa jore & zpopasta -->
     <div class="container main-content">
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img src="path_to_jore_image.jpg" class="card-img-top" alt="Jore & Zpoppa">
+                    <img src="https://cdn-images.dzcdn.net/images/cover/cc675e618722190024dcd7dd16baa84f/0x1900-000000-80-0-0.jpg"
+                        class="card-img-top" alt="Jore & Zpoppa">
                     <div class="card-body">
                         <h5 class="card-title">Jore & Zpoppa</h5>
                         <p class="card-text">Jore & Zpoppa on veljeksistä koostuva suomalainen rap-duo.
@@ -63,10 +111,11 @@
                     </div>
                 </div>
             </div>
-
+            <!-- tieoa obikeysistä -->
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img src="path_to_zpoppa_image.jpg" class="card-img-top" alt="Obikeys">
+                    <img src="https://images.genius.com/11899fb6110d898676ca0daf497c65c5.645x645x1.png"
+                        class="card-img-top" alt="Obikeys">
                     <div class="card-body">
                         <h5 class="card-title">Obikeys</h5>
                         <p class="card-text">Obikeys on suomalainen musiikkituottaja, joka on tuottanut kappaleita eri
@@ -80,41 +129,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Reaaliaikainen kellonäyttö -->
-    <div id="clock" style="font-size: 2rem; font-weight: bold;">
-    </div>
-    <!-- Kellon hakeminen API:sta -->
-    <script>
-        const apiKey = "ICAPFK7RFW7G";
-
-        function fetchTime() {
-            fetch('https://api.timezonedb.com/v2.1/get-time-zone?key=ICAPFK7RFW7G&format=json&by=zone&zone=Europe/Helsinki')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Verkkovirhe');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const dateTime = data.formatted;
-                    const time = new Date(dateTime).toLocaleTimeString('fi-FI', {
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    });
-                    document.getElementById('clock').textContent = time;
-                })
-                .catch(error => {
-                    console.error('Virhe: ', error);
-                    document.getElementById('clock').textContent = 'Ajan hakeminen epäonnistui';
-                });
-        }
-
-        // Päivitetään kello joka sekunti
-        setInterval(fetchTime, 10000);
-        fetchTime();
     </script>
-    <footer class="footer">
+    <footer class="footer mt-5">
         <p>&copy; 2025 Jore & Zpoppa. Kaikki oikeudet pidätetään.</p>
     </footer>
 
