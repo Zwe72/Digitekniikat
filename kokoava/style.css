@@ -97,6 +97,7 @@ header {
     /* Korostusviiva aktiiviselle linkille */
 }
 
+/* content-section tyyli */
 .content-block {
     padding: 20px;
     margin-bottom: 20px;
@@ -104,7 +105,7 @@ header {
     color: #fff;
     border-radius: 8px;
 }
-
+/* hero-osion tyyli */
 .hero-section {
     background-color: #222;
     color: #fff;
@@ -138,7 +139,6 @@ header {
 .card .card-img-top {
     max-width: 100%;
     height: auto;
-    height: 500px;
     object-fit: cover;
 }
 
