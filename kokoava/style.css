@@ -1,9 +1,11 @@
+/* yleinen tyyli */
 body {
     background-color: #111;
     color: #fff;
     font-family: Arial, sans-serif;
 }
 
+/* Header-tyylit */
 .header-section {
     background: url('path_to_calligraphy_image.jpg') no-repeat center center;
     background-size: cover;
@@ -24,6 +26,7 @@ body {
     padding: 2rem 0;
 }
 
+/* Footer-tyylit */
 .footer {
     background-color: #222;
     text-align: center;
@@ -47,6 +50,7 @@ header {
     padding: 1rem 0;
 }
 
+/* Navigaatiopalkki */
 .navbar {
     background-color: #333;
     /* Tumma harmaa tausta */
@@ -71,7 +75,7 @@ header {
 }
 
 .navbar-toggler-icon {
-    background-color: #fff;
+    background-color: #ffffff;
     /* Valkoinen hamburger-ikoni */
 }
 
@@ -122,6 +126,7 @@ header {
     padding: 40px 20px;
 }
 
+/* korttien tyyli */
 .card {
     background-color: #333;
     color: #fff;

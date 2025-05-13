@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    <!-- navigaatio -->
     <nav class="navbar navbar-expand-sm navbar-custom">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -24,17 +24,22 @@
                         <a class="nav-link" href="index.html">Etusivu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contents.html">Musiikki & Kaligrafia</a>
+                        <a class="nav-link" href="contents.html">Musiikki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lahteet.html">Lähteet</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="hero-section">
         <div class="hero-text">
             <h1>Jore & Zpoppa</h1>
-            <p class="intro-text">Suomalaisen hiphopin sydämessä. Tervetuloa tutustumaan heidän maailmansa syvyyksiin!
+            <p class="intro-text">
+                Tervetuloa Joren ja Zpopan fanisivustolle! <br>
+                Täällä voit tutustua tarkemmin heihin, heidän albumeihinsa sekä musiikinsa ja
+                kalligraafiaan. Löydät myös tietoa heidän tunnetuista kappaleistaan!
             </p>
         </div>
     </div>
@@ -43,28 +48,72 @@
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img src="path_to_jore_image.jpg" class="card-img-top" alt="Jore">
+                    <img src="path_to_jore_image.jpg" class="card-img-top" alt="Jore & Zpoppa">
                     <div class="card-body">
-                        <h5 class="card-title">Jore</h5>
-                        <p class="card-text">Jore on tunnettu raikkaasta tyylistään ja voimakkaista sanoituksistaan.
-                            Hänen musiikkinsa vie kuuntelijat syvälle suomalaisen hiphopin maailmaan.</p>
+                        <h5 class="card-title">Jore & Zpoppa</h5>
+                        <p class="card-text">Jore & Zpoppa on veljeksistä koostuva suomalainen rap-duo.
+                            He nousivat julkisuuteen vuonna 2018 debyyttisinglellään "Batman".
+                            Vuonna 2020 he julkaisivat ensimmäisen albuminsa "Eskimo Tape", joka sai hyvän
+                            vastaanoton.<br><br> Duo jatkoi menestystään vuonna 2023 albumilla "Love SZN" ja julkaisi
+                            vuonna
+                            2025 uuden albumin "Monsteri". <br><br> Jore & Zpoppa tunnetaan myös ikonisesta lauseestaan
+                            "Lepakot
+                            ei koskaan nuku".
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img src="path_to_zpoppa_image.jpg" class="card-img-top" alt="Zpoppa">
+                    <img src="path_to_zpoppa_image.jpg" class="card-img-top" alt="Obikeys">
                     <div class="card-body">
-                        <h5 class="card-title">Zpoppa</h5>
-                        <p class="card-text">Zpoppa tuo lavalle kitaran ja rappen yhdistelmät. Hänen tuotantonsa on
-                            ollut merkittävä osa suomalaista hiphop-kulttuuria.</p>
+                        <h5 class="card-title">Obikeys</h5>
+                        <p class="card-text">Obikeys on suomalainen musiikkituottaja, joka on tuottanut kappaleita eri
+                            artisteille,
+                            kuten Madboialille ja rap-duo Jore & Zpopalle. Jore & Zpoppa kappalaiden alussa kuullaan
+                            useimmiten lause
+                            "obi vähä chillimmi", joka kuuluu jokaisessa Obin tuottamassa kappaleeessa.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Reaaliaikainen kellonäyttö -->
+    <div id="clock" style="font-size: 2rem; font-weight: bold;">
+    </div>
+    <!-- Kellon hakeminen API:sta -->
+    <script>
+        const apiKey = "ICAPFK7RFW7G";
+
+        function fetchTime() {
+            fetch('https://api.timezonedb.com/v2.1/get-time-zone?key=ICAPFK7RFW7G&format=json&by=zone&zone=Europe/Helsinki')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Verkkovirhe');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const dateTime = data.formatted;
+                    const time = new Date(dateTime).toLocaleTimeString('fi-FI', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    document.getElementById('clock').textContent = time;
+                })
+                .catch(error => {
+                    console.error('Virhe: ', error);
+                    document.getElementById('clock').textContent = 'Ajan hakeminen epäonnistui';
+                });
+        }
+
+        // Päivitetään kello joka sekunti
+        setInterval(fetchTime, 10000);
+        fetchTime();
+    </script>
     <footer class="footer">
         <p>&copy; 2025 Jore & Zpoppa. Kaikki oikeudet pidätetään.</p>
     </footer>
